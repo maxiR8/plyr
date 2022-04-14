@@ -1763,23 +1763,24 @@ const controls = {
       }
       // eslint-disable-next-line no-empty
     } catch (e) {}
-  }, 
-    
-  // Add markers 
+  },
+
+  // Add markers
   setMarkers() {
     if (this.duration > 0 && !this.elements.markers) {
       const { points } = this.config.markers;
       const markersContainerFragment = document.createDocumentFragment();
       const markersPointsFragment = document.createDocumentFragment();
-      const markerTipElement = createElement(
-        'span',
-        {
-          class: this.config.classNames.markers.tip,
-        },
-        '',
-      );
 
       points.forEach((point) => {
+        const markerTipElement = createElement(
+          'span',
+          {
+            class: this.config.classNames.markers.tip,
+          },
+          '',
+        );
+
         if (point < 0 || point > this.duration) {
           return;
         }
@@ -1796,34 +1797,35 @@ const controls = {
         const tipVisible = `${this.config.classNames.markers.tip}--visible`;
         const toggle = (show) => toggleClass(markerTipElement, tipVisible, show);
 
-        markerPointElement.addEventListener('mouseenter', () => {
-          markerTipElement.style.left = left;
-          if (point.tipHTML) {
-            markerTipElement.innerHTML = point.tipHTML;
-          } else {
-            markerTipElement.innerText = point.tip;
-          }
-          toggle(true);
-        });
-        markerPointElement.addEventListener('mouseleave', () => {
-          toggle(false);
-        });
-        markerPointElement.addEventListener('click', () => {
-          this.currentTime = point.time;
-        });
+        // markerPointElement.addEventListener('mouseenter', () => {
+        markerTipElement.style.left = left;
+        if (point.tipHTML) {
+          markerTipElement.innerHTML = point.tipHTML;
+        } else {
+          markerTipElement.innerText = point.tip;
+        }
+        toggle(true);
+        // });
+        // markerPointElement.addEventListener('mouseleave', () => {
+        //   toggle(false);
+        // });
+        // markerPointElement.addEventListener('click', () => {
+        //   this.currentTime = point.time;
+        // });
 
         markerPointElement.style.left = left;
         markersPointsFragment.appendChild(markerPointElement);
+
+        markersContainerFragment.appendChild(markersPointsFragment);
+        markersContainerFragment.appendChild(markerTipElement);
+
+        this.elements.markers = {
+          points: markersPointsFragment,
+          tip: markerTipElement,
+        };
+
+        this.elements.progress.appendChild(markersContainerFragment);
       });
-
-      markersContainerFragment.appendChild(markersPointsFragment);
-      markersContainerFragment.appendChild(markerTipElement);
-
-      this.elements.markers = {
-        points: markersPointsFragment,
-        tip: markerTipElement,
-      };
-      this.elements.progress.appendChild(markersContainerFragment);
     }
   },
 };
