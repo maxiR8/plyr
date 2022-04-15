@@ -593,6 +593,19 @@ class Listeners {
       'fastForward',
     );
 
+    // Beacon toggle
+    this.bind(
+      elements.buttons.beacon,
+      'click',
+      () => {
+        elements.buttons.beacon.pressed = !elements.buttons.beacon.pressed;
+        document.querySelectorAll('.plyr__marker__tip').forEach((tip) => {
+          toggleClass(tip, 'plyr__marker__tip--visible');
+        });
+      },
+      'beacon',
+    );
+
     // Mute toggle
     this.bind(
       elements.buttons.mute,

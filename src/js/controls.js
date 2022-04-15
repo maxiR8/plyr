@@ -59,6 +59,7 @@ const controls = {
         restart: getElement.call(this, this.config.selectors.buttons.restart),
         rewind: getElement.call(this, this.config.selectors.buttons.rewind),
         fastForward: getElement.call(this, this.config.selectors.buttons.fastForward),
+        beacon: getElement.call(this, this.config.selectors.buttons.beacon),
         mute: getElement.call(this, this.config.selectors.buttons.mute),
         pip: getElement.call(this, this.config.selectors.buttons.pip),
         airplay: getElement.call(this, this.config.selectors.buttons.airplay),

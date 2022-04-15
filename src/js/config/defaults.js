@@ -302,6 +302,7 @@ const defaults = {
       restart: '[data-plyr="restart"]',
       rewind: '[data-plyr="rewind"]',
       fastForward: '[data-plyr="fast-forward"]',
+      beacon: '[data-plyr="beacon"]',
       mute: '[data-plyr="mute"]',
       captions: '[data-plyr="captions"]',
       download: '[data-plyr="download"]',
@@ -453,7 +454,7 @@ const defaults = {
     album: '',
     artwork: [],
   },
-  
+
   // Markers
   markers: {
     enabled: false,
