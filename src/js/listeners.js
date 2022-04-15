@@ -599,8 +599,15 @@ class Listeners {
       'click',
       () => {
         elements.buttons.beacon.pressed = !elements.buttons.beacon.pressed;
+
+        // Toggle Tips (Beacons)
         document.querySelectorAll('.plyr__marker__tip').forEach((tip) => {
           toggleClass(tip, 'plyr__marker__tip--visible');
+        });
+
+        // Toggle Points
+        document.querySelectorAll('.plyr__marker__points').forEach((point) => {
+          toggleClass(point, 'plyr__marker__points--hidden');
         });
       },
       'beacon',
