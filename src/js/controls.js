@@ -66,6 +66,7 @@ const controls = {
         settings: getElement.call(this, this.config.selectors.buttons.settings),
         captions: getElement.call(this, this.config.selectors.buttons.captions),
         fullscreen: getElement.call(this, this.config.selectors.buttons.fullscreen),
+        widescreen: getElement.call(this, this.config.selectors.buttons.widescreen),
       };
 
       // Progress

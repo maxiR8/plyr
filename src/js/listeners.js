@@ -613,6 +613,19 @@ class Listeners {
       'beacon',
     );
 
+    // Widescreen toggle
+    this.bind(
+      elements.buttons.widescreen,
+      'click',
+      () => {
+        elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
+        document.querySelectorAll('.common-block').forEach((block) => {
+          toggleClass(block, 'widescreen');
+        });
+      },
+      'widescreen',
+    );
+
     // Mute toggle
     this.bind(
       elements.buttons.mute,

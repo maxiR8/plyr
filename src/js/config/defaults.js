@@ -307,6 +307,7 @@ const defaults = {
       captions: '[data-plyr="captions"]',
       download: '[data-plyr="download"]',
       fullscreen: '[data-plyr="fullscreen"]',
+      widescreen: '[data-plyr="widescreen"]',
       pip: '[data-plyr="pip"]',
       airplay: '[data-plyr="airplay"]',
       settings: '[data-plyr="settings"]',
