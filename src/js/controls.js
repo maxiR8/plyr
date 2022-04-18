@@ -62,6 +62,7 @@ const controls = {
         beacon: getElement.call(this, this.config.selectors.buttons.beacon),
         mute: getElement.call(this, this.config.selectors.buttons.mute),
         pip: getElement.call(this, this.config.selectors.buttons.pip),
+        pictureInPicture: getElement.call(this, this.config.selectors.buttons.pictureInPicture),
         airplay: getElement.call(this, this.config.selectors.buttons.airplay),
         settings: getElement.call(this, this.config.selectors.buttons.settings),
         captions: getElement.call(this, this.config.selectors.buttons.captions),

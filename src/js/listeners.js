@@ -626,6 +626,19 @@ class Listeners {
       'widescreen',
     );
 
+    // Picture in Picture (Custom) toggle
+    this.bind(
+      elements.buttons.pictureInPicture,
+      'click',
+      () => {
+        elements.buttons.pictureInPicture.pressed = !elements.buttons.pictureInPicture.pressed;
+        document.querySelectorAll('.plyr').forEach((plyr) => {
+          toggleClass(plyr, 'picture-in-picture');
+        });
+      },
+      'pictureInPicture',
+    );
+
     // Mute toggle
     this.bind(
       elements.buttons.mute,

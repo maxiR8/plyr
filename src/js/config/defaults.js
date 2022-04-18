@@ -309,6 +309,7 @@ const defaults = {
       fullscreen: '[data-plyr="fullscreen"]',
       widescreen: '[data-plyr="widescreen"]',
       pip: '[data-plyr="pip"]',
+      pictureInPicture: '[data-plyr="picture-in-picture"]',
       airplay: '[data-plyr="airplay"]',
       settings: '[data-plyr="settings"]',
       loop: '[data-plyr="loop"]',
