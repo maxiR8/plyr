@@ -619,9 +619,7 @@ class Listeners {
       'click',
       () => {
         elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
-        document.querySelectorAll('.common-block').forEach((block) => {
-          toggleClass(block, 'widescreen');
-        });
+        toggleClass(document.querySelector('body'), 'widescreen');
       },
       'widescreen',
     );
@@ -632,9 +630,7 @@ class Listeners {
       'click',
       () => {
         elements.buttons.pictureInPicture.pressed = !elements.buttons.pictureInPicture.pressed;
-        document.querySelectorAll('.plyr').forEach((plyr) => {
-          toggleClass(plyr, 'picture-in-picture');
-        });
+        toggleClass(document.querySelector('body'), 'picture-in-picture');
       },
       'pictureInPicture',
     );
