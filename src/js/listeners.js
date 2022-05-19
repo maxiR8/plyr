@@ -636,7 +636,13 @@ class Listeners {
             toggleClass(body, 'widescreen-mobile');
             elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
           }
-          player.fullscreen.toggle();
+          if (player.config.fullscreen.enabled === false) {
+            player.config.fullscreen.enabled = true;
+            player.fullscreen.toggle();
+          } else {
+            player.fullscreen.toggle();
+            player.config.fullscreen.enabled = false;
+          }
         }
       },
       'widescreen',
