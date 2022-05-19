@@ -618,8 +618,26 @@ class Listeners {
       elements.buttons.widescreen,
       'click',
       () => {
-        elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
-        toggleClass(document.querySelector('body'), 'widescreen');
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const body = document.querySelector('body');
+        if (vw >= 992) {
+          if (body.classList.contains('widescreen-mobile')) {
+            body.classList.remove('widescreen-mobile');
+            toggleClass(body, 'widescreen');
+          } else {
+            toggleClass(body, 'widescreen');
+            elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
+          }
+        } else {
+          if (body.classList.contains('widescreen')) {
+            body.classList.remove('widescreen');
+            toggleClass(body, 'widescreen-mobile');
+          } else {
+            toggleClass(body, 'widescreen-mobile');
+            elements.buttons.widescreen.pressed = !elements.buttons.widescreen.pressed;
+          }
+          player.fullscreen.toggle();
+        }
       },
       'widescreen',
     );
